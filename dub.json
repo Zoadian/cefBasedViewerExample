@@ -1,0 +1,29 @@
+{
+	"name": "aqview",
+	"description": "aqview",
+	"license": "proprietary",
+	"copyright": "Copyright © 2017, Felix Hufnagel",
+	"authors": [
+		"Felix Hufnagel"
+	],
+	"targetPath": "bin",
+	"sourceFiles-windows": [
+		"resource.res"
+	],
+	"copyFiles-windows-x86": [
+		"dep/cef/*"
+	],
+	"copyFiles-windows-x86_64": [
+		"dep/cef/*"
+	],
+	"preBuildCommands": [
+		"rc.exe -R resource.rc"
+	],
+	"postBuildCommands": [
+		"mt.exe -manifest exe.manifest -outputresource:bin/aqview.exe"
+	],
+	"dependencies": {
+		"libasync": "~>0.8.3"
+	},
+	"versions": []
+}
